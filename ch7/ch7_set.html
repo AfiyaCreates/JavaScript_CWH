@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice set 7</title>
+    <!-- css -->
+     <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        nav{
+            display:flex;
+            background-color:pink;
+        }
+        nav li{
+            list-style:none;
+            padding:0 23px;
+        }
+
+     </style>
+</head>
+<body>
+    <!-- Q1 Q3 navbar -->
+     <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li>Contact</li>
+     </nav>
+     <!-- Q2 -->
+      <table>
+        <td>hello</td>
+        <tr>hello1</tr>
+        <tr>hello2</tr>
+        <tr>hello3</tr>
+        <tr>hello4</tr>
+      </table>
+      <!-- there is no tbody in code but while inspection browser adds it automatically see in elements -->
+    
+
+
+
+     <!-- javascript -->
+      <script>
+        //Q1
+        let nav_element= document.getElementsByTagName("nav")[0].firstElementChild // give firstchild element of first nav
+        nav_element.style.color="red"
+        //Q3
+        let element_1 = document.getElementsByTagName("nav")[0].firstElementChild
+        let element_2 = document.getElementsByTagName("nav")[0].lastElementChild
+        element_1.style.color = "green"
+        element_2.style.color = "green"
+        //Q4 *
+       Array.from(document.getElementsByTagName("li")).forEach((element) => {
+            element.style.background = "cyan"
+        })
+
+      </script>
+
+
+
+    
+</body>
+</html>
