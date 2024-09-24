@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertion_methods</title>
+</head>
+<body>
+    i am start of this container(outer)
+    <div class="container">
+        i am start of this container(inner)
+        <div class="first">this is my first element </div>
+        i am end of this container(inner)
+    </div>
+    i am end of this container (outer)
+</body>
+
+<!-- javascript -->
+ <script>
+    let a = document.getElementsByTagName("div")[0]
+    // a.innerHTML = a.innerHTML+ "<h1>hello world </h1>"  // this gets added to container div
+
+    let div = document.createElement("div") // creates an element div
+    div.innerHTML = "<h1>hello world</h1>" // give <h1> tag in it
+    // check the position in element at inspection 
+    a.appendChild(div) // add this div inside parent div container but at end 
+    // a.prepend(div) // add this div inside the parent containe but at start
+    // a.before(div) // add this div outside the parent container but at start 
+    // a.after(div) // add this div outside the parent container but at end
+
+    a.replaceWith(div) //replaces the container div with the new div
+ </script>
+</html>

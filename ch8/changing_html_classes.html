@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+     <style>
+        html,body{
+            height:100%;
+            width:100%;
+        }
+        .yellow{
+            background-color: yellow;
+            color: white;
+        }
+        .red{
+            background-color: red;
+            color: white;
+        }
+        .text-dark{
+            color: black;
+        }
+     </style>
+</head>
+<body>
+    <div id="first" class="yellow text-dark">
+        <span>hey i am good</span>
+    </div>
+
+
+    <!-- javascript -->
+     <script>
+        //imp concept
+        // to change the class of an element 
+        first = document.getElementById("first") // remember id is unique
+        first.className = "red text-dark"
+        first.classList // returns list of all the classes
+        first.classList.remove("red") // removes the class
+        first.classList.add("red")// adds the class
+
+        // first.classList.toggle("red") // agr hai to hatadega agr nhi h to lgadega 
+
+      console.log(first.classList.contains("yellow"))// returns true or false based on the class it contains or not
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes and Methods</title>
+</head>
+<body>
+    hello world
+    <!-- added custom attributes using data-attributename -->
+    <div id="first" class="one" data-game="mario" data-player="harry">this is the first container</div>
+</body>
+
+<!-- javascript -->
+<script>
+    let first = document.getElementById("first")
+    // let a = first.getAttribute("class")// we know the id so we find atribute like class of that element using the id
+    // console.log(a)//give output one .which is the value of the attribute class
+    // console.log(first.hasAttribute("class")) //true
+    // console.log(first.hasAttribute("style")) //false
+    // console.log(first.setAttribute("class","true sachin")) // to check see elements in inspection 
+    // console.log(first.setAttribute("hidden", "true"))//hidden attribute gets added to id - first so div elements are hidden now
+    // first.removeAttribute("class")
+    // console.log(first.attributes)
+    console.log(first.dataset) //return custom attributes
+    console.log(first.dataset.game)//return game value 
+    console.log(first.dataset.player)//return player value
+
+
+</script>
+</html>
