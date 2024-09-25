@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <!-- console.log() krenge to console me show hoga  -->
+    <!-- can use alert to show on browser page -->
+    <!--on page... When the mouse enters the div with class container, the message 'container ke andar mouse gya' is logged to the console.
+    When the div is clicked, the message 'container me click hua' is logged to the console.
+    When the button is clicked, an alert with the message 'hello' is displayed. -->
+<div class="container" onmouseenter="console.log('container ke andar mouse gya')"  onclick="console.log('container me click hua')">   
+    <button onclick="alert('hello')">click me</button>
+</div>
+
+
+<!-- javascript -->
+ <script>
+    let a = document.getElementsByClassName("container")[0]
+    a.onclick=()=>{   // on click is at 2 places so this one at js will be considered
+        let b = document.getElementsByClassName("container")[0]
+        b.innerHTML="hello world"
+    }
+ </script>
+
+</body>
+</html>

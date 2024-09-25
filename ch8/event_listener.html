@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+
+<body>
+    <div>
+        <button id="btn">click me</button>
+    </div>
+
+
+    <!-- javascript -->
+    <script>
+        let btn = document.getElementById("btn")
+        let x = function (e) {  // e can be any word eg- event
+            //console.log(e)    give details of the obj on which it is applied
+            // console.log(e.target) returns the buttton
+            // console.log(e.type,e.clientX,e.clientY)   returns ke khan pr user ne click kiya
+            alert("hello world 1")
+        }
+        let y = function (e) {
+            alert("hello world 2")
+        }
+
+        btn.addEventListener('click', x)
+        btn.addEventListener('click', y)
+
+        let a = prompt("enter your fav no")
+        if (a =="2") {
+            btn.removeEventListener('click', y)
+        }
+        // it works after clicking on button 
+
+    </script>
+</body>
+
+</html>
