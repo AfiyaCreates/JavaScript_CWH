@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch 8 set</title>
+
+    <!-- css -->
+     <style>
+        .bulb-container{
+            height:34px;
+            width: 34px;
+        }
+        .bulb{
+            background: yellow;
+        }
+     </style>
+</head>
+
+<body>
+    <!-- can add single quote in double quotes or double quote in single quote -->
+    <!-- Q1 -->
+    <!-- <h1>Order</h1>
+    <button onclick="alert('please give me one plate of noodles')">noodles</button>
+    <button onclick="alert('please give me one plate of vada paw')">vada paw</button>
+    <button onclick="alert('please give me one plate of pizza')">pizza</button> -->
+
+    <!-- Q2 -->
+    <!-- <h1>Bookmarks</h1>
+     <a href="https:/google.com"><button id="google">google</button></a>
+     <a href="https:/twitter.com"><button id="twitter">twitter</button></a>
+     <a href="https:/fb.com"><button id="facebook">facebook</button></a>
+     <br>  -->
+
+    <!-- Q3   while running this comment down Q2 -->
+    <!-- <button id="google">google</button>
+    <button id="twitter">twitter</button>
+    <button id="facebook">facebook</button>
+  -->
+
+  <!-- Q5 -->
+    <div id="bulb" class="bulb-container bulb">
+
+    </div>
+
+
+
+    <!-- javascript -->
+    <script>
+        // //Q3 to use it without href ***
+        // let google = document.getElementById("google").addEventListener("click", function () {
+        //     window.location = "https:/google.com"
+        //     win.focus()
+        // })
+        // let twitter = document.getElementById("twitter").addEventListener("click", function () {
+        //     window.location = "https:/twitter.com"
+        //     win.focus()
+        // })
+        // let facebook = document.getElementById("facebook").addEventListener("click", function () {
+        //     window.location = "https:/fb.com"
+        //     win.focus()
+        // })
+
+        // // Q4   -  see output in console
+        // // ignore this abhi nhi pdha
+        // const fetchContent = async (url) => {
+        //     con = await fetch(url)
+        //     let a = await con.json()
+        //     return a
+        // }
+        // // this concept is imp
+        // setInterval(async function () {
+        //     let url = "https://jsonplaceholder.typicode.com/todos/1"
+        //     console.log(await fetchContent(url))
+        // }, 3000)
+
+
+    // Q5
+    setInterval(function(){
+        document.querySelector("#bulb").classList.toggle("bulb")
+    },300)
+
+    </script>
+
+
+
+</body>
+
+</html>
