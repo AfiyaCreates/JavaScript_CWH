@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+
+
+
+
+    <!-- javascript -->
+    <script>
+        //  synchronous programming
+        // run on browser and see in console
+        // let a = prompt("what is your name?")
+        // let b = prompt("what is your age?")
+        // let c = prompt("what is your rollno?")
+        // console.log(a, " is ", b, " years old and has ", c, " rollno")
+
+        // asynchronous programming
+        // console.log("start")
+        // setTimeout(function () {  // since its asynchronous by the time end is printed it goes in the background and printed at end after 3 sec
+        //     console.log("hey i am good")
+
+        // }, 3000)
+        // console.log("end")
+
+        //  callback functions ***
+        function loadScript(src, callback) {  // func takes src as input
+            var script = document.createElement("script") //creates a script element
+            script.src = src // add the src to script src
+            // when src is loaded
+            script.onload = function () {
+                console.log("loaded script with src:", src)  // to print when the src is added so that its visible to us on console
+                callback(null, src) // 
+            }
+            // to handle error while loading
+            script.onerror = function () {
+                console.log('error handling script with SRC:' + src)
+                callback(new Error("src got some error")) // to print the error
+
+            }
+            // adds the script element to doc body
+            document.body.appendChild(script)
+        }
+        function hello(error, src) {
+            if (error) {
+                console.log(error)
+                return
+            }
+            alert("hello world " + src) 
+        }
+        function goodMorning(error, src) {
+            if(error){
+                console.log(error)
+                return 
+            }
+            alert("good morning " + src)
+        }
+
+        loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js", hello)  // its just function name not hello()
+        // see in elements a new script with src is added to body 
+        // and the callback function is executed once the script is loaded (function is mentioned by us see above)
+        // and a message is printed on console
+
+    </script>
+</body>
+
+</html>
