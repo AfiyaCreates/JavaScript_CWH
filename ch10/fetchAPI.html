@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- javascript -->
+    <script>
+        // see in console
+        //fetch returns a promise
+        //fetches data of api from url
+        // fetching is called a 2 stage process
+        let p = fetch("https://goweather.herokuapp.com/weather/Ny") // this resolves in a promise which resolves in another promise whose value gives us the result
+        p.then((value1) => {
+            console.log(value1.status)
+            console.log(value1.ok)
+            return value1.json()  // if u select json u get js obj ...if u select text u get textual data etc...
+        }).then((value2) => {
+            console.log(value2)
+        })
+
+    </script>
+
+</body>
+
+</html>

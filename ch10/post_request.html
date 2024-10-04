@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post request</title>
+</head>
+
+<body>
+    <!--  used when we want to send the data on server
+
+    incase if you did not get the concepts here 
+    let me clear it out 
+    a fetch api returns a promise that resolves to response object 
+    so if we use let p = await fetch(something ) the resolved value of fetch ,which is response object is stored inside the  p 
+    and response object not only contains data but also information about the fetch request 
+    so in oder to get access only to the data we have to use the response.json in the video harry is storing the response object in p so it will become p.json .p.json returns a proomise that resolves to the data we want to get from the server and harry is storing that data in response varible and then returning the response (data in this case )
+    and whatever and async function returns is converted into a resolved value of a promise -->
+    <!-- javascript......understand again -->
+    <script>
+
+        const createToDo = async () => {
+            let options = {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body:
+                    JSON.stringify({    // converts js obj into string
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1,
+                    })
+            }
+            let p = await  fetch('https://jsonplaceholder.typicode.com/posts', options)
+            let response = await p.json()
+            return response
+        }
+
+        const mainfunc = async()=>{
+            let todo = await  createToDo()
+            console.log(todo)
+        }
+
+        mainfunc()
+
+
+      
+      
+    </script>
+
+</body>
+
+</html>
