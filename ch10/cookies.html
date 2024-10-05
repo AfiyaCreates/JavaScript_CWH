@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies</title>
+</head>
+
+<body>
+
+    <!-- javascript -->
+    <script>
+        // small strings of data directly stored in the browser - in form of key - value
+        console.log(document.cookie) // gives all types of cookies
+        document.cookie = "name=harry9900"
+        document.cookie = "name2=afiya5588" // does not over writes the cookie but add it
+        document.cookie = "name=harry" // it can update the same cookie
+        console.log(document.cookie)
+
+        // go to twitter site and in console - console.log(document.cookie) - gives u all the cookies 
+
+        let key = prompt("enter key")
+        let value = prompt("enter value")
+        // document.cookie = `${key}=${value}`
+        // if we add  a semicolon,equals..etc to the key ..value.. wont appear so to get rid of this problem we use - encodeURIComponenet function
+        document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+        // it encodes the semicolon in a way that we can decode it later
+        // using decodeURIComponent("...")
+        console.log(document.cookie)
+        console.log(decodeURIComponent("afiya%3B=khan"))
+
+        //document.cookie = x=1;y=2;z=3...only sets one cookie at a time eg - will only set x=1 
+        //but we can add different options to a cookie separated by comas 
+        document.cookie = " user=john ; path=/a  "
+        console.log(document.cookie)
+        // path makes the cookie available at /a
+        // similarly can add expire time using expires option
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
