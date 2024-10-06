@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session storage</title>
+</head>
+<body>
+hello world
+    <!-- javascript -->
+     <script>
+     // data vanishes on opening and closing the tab - ei it remains only for  session 
+     // all other methods are same as that of local storage
+        sessionStorage.setItem("name","harry")
+
+        //storage event
+        // it gets triggeed when we update data in local or session storage
+        localStorage.setItem("name","zarah")
+        // open 2 tabs of sme page ..make changes in one with right click on name
+        //upon making changes u receive an alert
+        window.onstorage=(e)=>{
+            alert("changed")
+            console.log(e)
+        }
+
+
+
+     </script>
+    
+</body>
+</html>

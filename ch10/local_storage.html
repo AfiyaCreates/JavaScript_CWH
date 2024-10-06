@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+
+<body>
+    hello world
+
+
+
+    <!-- javascript -->
+    <script>
+        // both key and value need to be string 
+        //can use JSON methods to store objects in localstorage
+        localStorage.setItem("afiya", "khan") // sets a key value pair in the local storage ...check in inspect,under application 
+        // we can update the value at a particular key in prompt too 
+
+        let key = prompt("enter the key u want to set")
+        let value = prompt("enter value u want to add ")
+
+        localStorage.setItem(key, value)
+
+        console.log(`the value at ${key} is ${localStorage.getItem(key)} `)  // localstorage.getitem(key) - returns the key value
+
+        console.log(localStorage.length) //returns the length (no of items in storage)
+
+        if (key == "red" || key == "blue") {
+            localStorage.removeItem(key)  // used to remove a key
+        }
+        if (key == 0) {
+            localStorage.clear()  // to clear the storage
+        }
+
+        console.log(localStorage.key(0)) //returns the key at a particular index
+
+
+
+
+    </script>
+
+</body>
+
+</html>
