@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+
+<body>
+
+
+
+    <!-- javascript -->
+    <script>
+        // JS objects have a special property called "prototype".
+        // The prototype can be either `null` or reference another object.
+        // When accessing a property or method on an object, if it's not found on the object itself, 
+        // JavaScript checks its prototype chain to find it.
+        let a = {
+            name: "harry",
+            lang: "javascript"
+        }
+        console.log(a)
+        // Create another object `p` which will act as the prototype for object `a`.
+        let p = {
+            run: () => {
+                alert("run")
+            }
+        }
+
+        //setting prototype
+        // Now, `a` can access any properties or methods defined on `p`.
+        a.__proto__ = p
+        a.run() // If a method or property is not found on `a`, JavaScript will look for it in `a.__proto__` (which is now `p`).
+
+        // We can also set a prototype for the prototype object.
+        p.__proto__ = {
+            age: "20"
+        }
+        console.log(a.age)
+
+
+    </script>
+
+</body>
+
+</html>
