@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructors</title>
+</head>
+
+<body>
+
+    <!-- javascript -->
+    <script>
+        //constructor is called when an obj is created
+        class railwayform {
+            constructor(givenname, trainno,add) {
+                console.log("constructor called..." +givenname + " " + trainno + " " + " "+ add)
+                this.name = givenname
+                this.trainno = trainno
+                this.add = add
+            }
+            preview(){
+                alert( this.name + " your form is  for train no "+ this.trainno + " and  address "+ this.add)
+            }
+
+            submit() {
+                alert(this.name + " your form is submitted for train no : " + this.trainno)
+            }
+            cancel() {
+                alert(this.name + " this form is cancelled for train no : " + this.trainno)    // use this.name to print that name
+                this.trainno=0 // make train no = 0 once it is cancelled
+            }
+
+        }
+
+        let harry = new railwayform("harry",112233,"kamla park ") // define the name and train no with obj since constructor holds them 
+        //constructor is called automatically when an obj is created 
+        harry.preview()
+        harry.submit()
+        harry.cancel()
+        harry.preview()
+
+
+
+    </script>
+</body>
+
+</html>

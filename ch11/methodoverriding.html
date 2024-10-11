@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>method overriding</title>
+</head>
+<body>
+
+
+    <!-- javascript -->
+     <script>
+        class employee{
+            login(){
+                console.log("employee logged in ")
+            }
+            logout(){
+                console.log(" logged out ")
+            }
+            leaves(no){
+                console.log(`employee has requested ${no} leaves`)
+            }
+        }
+
+        class programmer extends employee{
+            coffee(x){
+                console.log(`programmer has requested for ${x} coffees`)
+            }
+            leaves(no){ // over riding parent method
+                super.leaves(4)  // use super keyword to override a method from parent class...ei to make changes to same method instead of creating a whole new method with same name 
+                console.log("one extra is granted")  
+                // console.log(`programmer has requested ${no+1} leaves (one extra)`)
+            }
+        }
+let e = new employee()
+        let p = new programmer()
+        e.login()
+        e.leaves(5)
+        p.login()
+        p.leaves()
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class and obj </title>
+</head>
+
+<body>
+
+
+
+    <!-- javascript -->
+    <script>
+        class railwayform {
+            //can add methods ,constructors etc
+            fill(givenname, trainno) {
+                this.name = givenname
+                this.trainno = trainno
+            }
+            submit() {
+                alert(this.name + " your form is submitted for train no : " + this.trainno ) 
+          }
+            cancel() {
+                alert(this.name + " this form is cancelled for train no : " + this.trainno )    // use this.name to print that name
+            }
+
+        }
+
+        // creating obj to access class elemnents
+        let harry = new railwayform()
+        let rohan = new railwayform()
+      
+        harry.fill("harry",12210)
+        harry.submit()
+        harry.cancel()
+
+        rohan.fill("rohan",1330)
+        rohan.submit()
+    
+    </script>
+
+</body>
+
+</html>
