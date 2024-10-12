@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor overriding </title>
+</head>
+<body>
+
+    <!-- javasript -->
+     <script>
+        // we create a constructor for parent class and not for the derived class ...then if we create a drived class obj then too parent class constuctor is called ..since the js engine copies the same constructor to derived class wit super keyword 
+        // eg - constructor(...args){
+        //      super(...args)}
+
+        // if we create a similar constuctor for derived class then that will be called..but we  have to call the parent (super) construtor before that 
+        class employee {
+            constructor(name){
+                this.name = name
+                console.log(`${name} - employees constructor is here`)
+            }     
+        }
+        class programmer extends employee {
+            // constructor(name){
+            //     super(name)
+            //     this.name = name
+            //     console.log(`${name} - programmers constructor is here`)
+            // }
+           
+        }
+        
+        let p = new programmer("harry")
+        
+     </script>
+    
+</body>
+</html>
