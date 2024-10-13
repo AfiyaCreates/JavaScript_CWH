@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch 11 set </title>
+</head>
+
+<body>
+
+    <!-- javascript -->
+    <script>
+        //Q1
+        class complex {
+            constructor(real,img){
+                this.real = real
+                this.img = img 
+            }
+            // Q2
+            add(num) {
+                this.real = this.real + num.real
+                this.img = this.img + num.img
+            }
+            //Q5
+            get real() {
+                return this._real
+            }
+            get img() {
+                return this._img
+            }
+
+            set real(r) {
+                this._real = r
+            }
+            set img(i) {
+                this._img = i
+            }
+
+        }
+
+        let a = new complex(3, 5)
+        a.real=10
+        a.img=10
+        // complex no for a will set as 10 + i10
+        let b = new complex(2, 4)
+        console.log(a.add(b))
+        console.log(`${a.real}+i${a.img}`)
+
+        //Q3
+        // class human{
+        //     constructor(name,favfood){
+        //         this.name=name
+        //         this.favfood=favfood
+        //     }
+        //     walk(){
+        //         console.log(this.name + " human is walking ")
+        //     }
+
+        // }
+        // class student extends human{
+        //     walk(){
+        //         console.log(this.name + " student is walking ")
+        //     }
+        // }
+        // let o = new student("afiya","biryani")
+        // o.walk()
+        // //Q4
+        // console.log(o instanceof human) // true 
+    </script>
+
+</body>
+
+</html>

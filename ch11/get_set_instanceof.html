@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getters setters and instance of method</title>
+</head>
+
+<body>
+
+    <!-- javascript -->
+    <script>
+        // getters and setters
+        // In the constructor, we use this._name ...
+        // The getter allows us to access the _name property directly using obj.name without calling a function.
+        // The setter allows us to assign a value to the _name property directly using obj.name = value without creating a separate function.
+
+        // instanceof Explanation
+        // The instanceof operator checks if an object belongs to a specific class (or any class that inherits from it).
+        // It returns true if the object is an instance of the specified class, and false otherwise.
+        class animal {
+            constructor(name) {
+                this._name = name
+            }
+            fly() {
+                alert("main ud rhi hun")
+            }
+            get name() {
+                return this._name
+            }
+            set name(newname) {
+                this._name = newname
+            }
+        }
+        let a = new animal("bruno")
+        a.fly()
+        console.log(a.name)  // gets printed in console
+        a.name = "jack"
+        console.log(a.name)
+
+        let c = 56
+        console.log(a instanceof animal)  // true
+        console.log(c instanceof animal)  // false
+
+
+    </script>
+
+</body>
+
+</html>
