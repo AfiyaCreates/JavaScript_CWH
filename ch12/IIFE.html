@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+
+<body>
+
+
+
+    <!-- javascript -->
+    <script>
+        // Function that returns a promise, which resolves with the value 456 after 4 seconds
+        // created a function which holds a promise so each time a new promise is called 
+        let a = () => {
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(456)
+                }, 4000)
+            })
+
+        }
+
+        // let f = async()=>{
+        //     let b = await a()
+        //     console.log(b)
+        //     let c = await a()
+        //     console.log(c)
+        //     let d = await a()
+        //     console.log(d)
+        // } 
+        //  f() // finally calling the func f which further calls the promises
+        // the value 456 appears on screen of console after 4 sec for 3 time 
+        
+         // Instead of using a separate function with async/await (like f), we are using an IIFE (Immediately Invoked Function Expression) 
+         // for better memory management as it keeps variables (b, c, d) within a local scope and frees up memory once the execution is complete.
+
+
+        (
+            // Calling the function 'a' which returns a promise, using await to pause until the promise resolves
+            async () => {
+                let b = await a()
+                console.log(b)
+                let c = await a()
+                console.log(c)
+                let d = await a()
+                console.log(d)
+            }
+        )() // Immediately invoking the async function
+        
+
+    </script>
+
+</body>
+
+</html>

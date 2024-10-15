@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment and spread operator</title>
+</head>
+
+<body>
+
+
+
+    <!-- javacript -->
+    <script>
+        //destructuring assignment
+
+        let arr = [3, 5, 8, 12, 14, 15]
+
+        // Example 1: Destructuring the first four elements into variables a, b, c, d, and the rest into an array
+        // let[a,b,c,d, ...rest]=arr  // sets a =3,b=5,c=8...       rest elements form an array
+        // console.log(a,b,c,d,rest)
+        // let [a, , , ...rest] = arr
+        // console.log(a,rest)
+
+        // let[a,b]= arr // wont throw error
+        // let[a,b,c,d,e,f,g] = arr // throws error
+
+        let { a, b } = { a: 1, b: 5 }
+        console.log(a, b)
+
+        // no need to do this
+        // let a = arr[0]
+        // let b = arr[1]
+
+
+        //spread operator
+
+        // Example 1: Converting an array into an object using spread operator (keys are array indices)
+        let arr1 = [3, 5, 8]  
+        let obj1 = { ...arr1 }
+        console.log(obj1)
+
+        // Example 2: Using spread operator to pass array elements as arguments to a function
+        function sum(v1, v2, v3) {
+            return v1 + v2 + v3   //  like this we can  the array values as  to use in function
+        }
+        console.log(sum(...arr1))
+
+
+        let obj2 = {
+            name: "harry",
+            company: "company xyz",
+            address: "xyz"
+        }
+        // Example: Using spread operator to copy and modify an object (overriding the 'name' property)
+        console.log({ ...obj2, name: "john" }); // { name: "john", company: "company xyz", address: "xyz" }
+        // Note: Spread operator should be used before the new key-value pair to allow overriding
+
+    </script>
+
+</body>
+
+</html>
