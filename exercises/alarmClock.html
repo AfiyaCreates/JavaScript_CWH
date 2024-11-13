@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+</head>
+
+<body>
+
+    <div id='time'></div>
+    <div id='alarm'></div>
+
+    <!-- the html AudioElelment interface can be used to play audio in the browser
+create ala5rm clock that displays time and plays audio at user specified time -->
+
+
+    <!-- javascript -->
+    <script>
+        // it works only when u click on screen after 0 seconds left
+
+        // Function to play an audio alert
+        function play() {
+            var audio = new Audio("https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3")
+            audio.play()
+        }
+
+        // Display current date and time, updating every second
+        setInterval(() => {
+            let d = new Date // Get the current date and time
+            time.innerHTML = d.toDateString() + " " + d.toTimeString()
+        }, 1000)
+
+        const setAlarm = (seconds) => {     // set alarm function 
+            let d = new Date().getTime() // Get the current time in milliseconds
+
+            // Set a timeout to play the alarm sound after the specified number of seconds
+            setTimeout(() => {
+                play()
+            }, seconds * 1000)
+
+            // Set an interval to update the countdown display
+            setInterval(() => {
+                secondsleft = (d + seconds * 1000) - new Date().getTime()
+                if (secondsleft > 0) {
+                    alarm.innerHTML = "Alarm ringing in...  " + Math.floor(secondsleft / 1000) + " seconds"
+                }
+            })
+        }
+
+        let s = prompt("after how many seconds u want the alarm to ring")
+        setAlarm(parseInt(s))
+
+
+    </script>
+</body>
+
+</html>
